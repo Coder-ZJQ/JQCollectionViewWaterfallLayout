@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JQCollectionViewWaterfallLayout'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'UICollectionView waterfall layout.'
 
 # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/coder-zjq/JQCollectionViewWaterfallLayout'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots      = 'https://github.com/Coder-ZJQ/JQCollectionViewWaterfallLayout/blob/master/Image/demo_vertical.gif?raw=true'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'coder-zjq' => 'zjq_joker@163.com' }
   s.source           = { :git => 'https://github.com/coder-zjq/JQCollectionViewWaterfallLayout.git', :tag => s.version.to_s }

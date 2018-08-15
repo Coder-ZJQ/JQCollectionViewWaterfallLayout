@@ -28,9 +28,22 @@ it, simply add the following line to your Podfile:
 pod 'JQCollectionViewWaterfallLayout'
 ```
 
+## Usage
 
+Same usage as UICollectionViewFlowLayout. But you should pay attention to the  **UICollectionViewDelegateFlowLayout** protocol method `collectionView:layout:sizeForItemAtIndexPath: `.
 
+``` objective-c
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+  	// When scroll direction is UICollectionViewScrollDirectionVertical, the item width is fixed, the item height is flexible. And you can change the col count by measure the item width.
+    
+    // When scroll direction is UICollectionViewScrollDirectionHorizontal, the item height is fixed, the item width is flexible. And you can change the row count by measure the item height.
+
+}
+```
+
+(see more detail in **Example** project)
 
 ## Author
 
