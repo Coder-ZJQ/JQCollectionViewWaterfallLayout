@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'JQCollectionViewWaterfallLayout'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of JQCollectionViewWaterfallLayout.'
+  s.summary          = 'UICollectionView waterfall layout.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,11 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  UICollectionView waterfall layout:
+  1. support vertical and horizontal scroll direction;
+  2. support different row/col count with different section;
+  3. support section headerView and footerView;
+  4. support UICollectionView updates.
                        DESC
 
   s.homepage         = 'https://github.com/coder-zjq/JQCollectionViewWaterfallLayout'
@@ -28,7 +32,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/coder-zjq/JQCollectionViewWaterfallLayout.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '6.0'
 
   s.source_files = 'JQCollectionViewWaterfallLayout/Classes/**/*'
   

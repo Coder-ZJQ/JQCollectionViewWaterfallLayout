@@ -1,0 +1,22 @@
+{
+  "name": "JQCollectionViewWaterfallLayout",
+  "version": "0.1.0",
+  "summary": "A short description of JQCollectionViewWaterfallLayout.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/coder-zjq/JQCollectionViewWaterfallLayout",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "coder-zjq": "zjq_joker@163.com"
+  },
+  "source": {
+    "git": "https://github.com/coder-zjq/JQCollectionViewWaterfallLayout.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "JQCollectionViewWaterfallLayout/Classes/**/*"
+}

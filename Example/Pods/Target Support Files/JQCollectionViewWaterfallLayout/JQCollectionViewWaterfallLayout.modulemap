@@ -1,0 +1,6 @@
+framework module JQCollectionViewWaterfallLayout {
+  umbrella header "JQCollectionViewWaterfallLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}

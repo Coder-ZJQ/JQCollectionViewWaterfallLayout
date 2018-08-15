@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Example-->
         <scene sceneID="wQg-tq-qST">
             <objects>
                 <viewController id="whP-gf-Uak" customClass="JQViewController" sceneMemberID="viewController">
@@ -20,12 +20,62 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HKn-jY-NwL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewLayout key="collectionViewLayout" id="cIe-cZ-ysm" customClass="JQCollectionViewWaterfallLayout"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" reuseIdentifier="cell" id="aNk-up-RZ2">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="whP-gf-Uak" id="g09-uV-ut9"/>
+                                    <outlet property="delegate" destination="whP-gf-Uak" id="FPw-sM-4s2"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSt-5V-2Hy">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Uam-rx-gse"/>
+                                </constraints>
+                                <state key="normal" title="Change Direction"/>
+                                <connections>
+                                    <action selector="changeScrollDirection:" destination="whP-gf-Uak" eventType="touchUpInside" id="qA2-Xf-Hho"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HKn-jY-NwL" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="EVB-er-o7v"/>
+                            <constraint firstAttribute="trailing" secondItem="gSt-5V-2Hy" secondAttribute="trailing" id="Fv3-EE-2fr"/>
+                            <constraint firstItem="gSt-5V-2Hy" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="RDp-m5-P5W"/>
+                            <constraint firstItem="Mvr-aV-6Um" firstAttribute="top" secondItem="gSt-5V-2Hy" secondAttribute="bottom" id="UWS-AE-JJH"/>
+                            <constraint firstAttribute="trailing" secondItem="HKn-jY-NwL" secondAttribute="trailing" id="VZ7-7b-Hio"/>
+                            <constraint firstItem="HKn-jY-NwL" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" id="YHh-jU-2dj"/>
+                            <constraint firstItem="gSt-5V-2Hy" firstAttribute="top" secondItem="HKn-jY-NwL" secondAttribute="bottom" id="apn-9r-Fua"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Example" id="FXV-fC-gxB">
+                        <barButtonItem key="rightBarButtonItem" title="Change Direction" id="fch-d6-aFU">
+                            <connections>
+                                <action selector="changeScrollDirection:" destination="whP-gf-Uak" id="ewO-HQ-FV7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="HKn-jY-NwL" id="tqL-Zc-853"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="-599" y="398"/>
         </scene>
     </scenes>
 </document>

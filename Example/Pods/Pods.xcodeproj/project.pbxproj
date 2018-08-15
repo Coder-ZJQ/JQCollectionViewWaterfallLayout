@@ -1,0 +1,747 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		033F1513DA87AB5C7F0D9652917205F2 /* Pods-JQCollectionViewWaterfallLayout_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DE48B3996C214EC71AFE646F1F2BD11 /* Pods-JQCollectionViewWaterfallLayout_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A86A86F252F4FF6F087ECEB9E31266C /* JQCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03653339BFA868806985AD04F10A6F4 /* JQCollectionViewWaterfallLayout.m */; };
+		1CA692B35CC8D1D41BB9254E7E8F08D0 /* JQCollectionViewWaterfallLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25EAD6DA84DDC77C2B55FD645CB77E91 /* JQCollectionViewWaterfallLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		635C9EC02355C76CE8E68BD029356F91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		7B2B4985E0B0107647C3560C97BD8D22 /* Pods-JQCollectionViewWaterfallLayout_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E846570CA9347416F6DDB1E65DB6D99F /* Pods-JQCollectionViewWaterfallLayout_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A042229D0F6C4FB176E8A6E097401DB3 /* JQCollectionViewWaterfallLayout-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8EAD47B48911F27CF353009C01D311 /* JQCollectionViewWaterfallLayout-dummy.m */; };
+		A1227BDE4DA435E4950A641E53805216 /* Pods-JQCollectionViewWaterfallLayout_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DFDE8F0410952B64DB85AE9B9D6FA7 /* Pods-JQCollectionViewWaterfallLayout_Tests-dummy.m */; };
+		A4467A992C9CAA7D12606922021114A6 /* Pods-JQCollectionViewWaterfallLayout_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02914DD6505DBF4F4804F6A597DAE3C5 /* Pods-JQCollectionViewWaterfallLayout_Example-dummy.m */; };
+		B929E6D6D781442722FA4EA9CFF327E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		B97E4B01C1370B7D2B11CE113D9E8FFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		D80580DC9671F4F655EEA72D735C244F /* JQCollectionViewWaterfallLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 846BE90294697AAD83D135F2FB717719 /* JQCollectionViewWaterfallLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0AEE3E9DAE0C70708FB6579E1AECD711 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB046BEDC4DCCBAFCFB423C2116F0879;
+			remoteInfo = "Pods-JQCollectionViewWaterfallLayout_Example";
+		};
+		76D522BE2BA169E3FF04A82B40D9D206 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DBE1FC3A06A2BE8C3946880521A1A10;
+			remoteInfo = JQCollectionViewWaterfallLayout;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02914DD6505DBF4F4804F6A597DAE3C5 /* Pods-JQCollectionViewWaterfallLayout_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JQCollectionViewWaterfallLayout_Example-dummy.m"; sourceTree = "<group>"; };
+		079DEC0722DAC336744AA00AFD69C443 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		0BA05FBC64D4B60B42A9DE5B6261EAB6 /* JQCollectionViewWaterfallLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JQCollectionViewWaterfallLayout.xcconfig; sourceTree = "<group>"; };
+		0E70A8447545F98700DB70A020D874AD /* Pods-JQCollectionViewWaterfallLayout_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JQCollectionViewWaterfallLayout_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		131AA11A2397E08164C5F29004D6E069 /* Pods-JQCollectionViewWaterfallLayout_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JQCollectionViewWaterfallLayout_Example-resources.sh"; sourceTree = "<group>"; };
+		1ACC66709400580069C115A2EE213BDF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2422F2DEB4B3C5D08904F5DBFE97CFAF /* Pods-JQCollectionViewWaterfallLayout_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewWaterfallLayout_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		25EAD6DA84DDC77C2B55FD645CB77E91 /* JQCollectionViewWaterfallLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JQCollectionViewWaterfallLayout-umbrella.h"; sourceTree = "<group>"; };
+		2DE48B3996C214EC71AFE646F1F2BD11 /* Pods-JQCollectionViewWaterfallLayout_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JQCollectionViewWaterfallLayout_Example-umbrella.h"; sourceTree = "<group>"; };
+		2EFB41905A7D41FFD89BEEEFC6F693D5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F7604F8A9EE5EAA8FE3273092D183C7 /* Pods-JQCollectionViewWaterfallLayout_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JQCollectionViewWaterfallLayout_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		39F5156DA7E28B15E2E5F73F035F2C76 /* Pods-JQCollectionViewWaterfallLayout_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JQCollectionViewWaterfallLayout_Tests.modulemap"; sourceTree = "<group>"; };
+		47C6544213697C8ED823B18D51A4E510 /* JQCollectionViewWaterfallLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JQCollectionViewWaterfallLayout.framework; path = JQCollectionViewWaterfallLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5073A3C0FC04C2F09CB50BF0B18EDF32 /* Pods-JQCollectionViewWaterfallLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewWaterfallLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		5688C1A207835C7CF84A8F44488C54E1 /* JQCollectionViewWaterfallLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JQCollectionViewWaterfallLayout-prefix.pch"; sourceTree = "<group>"; };
+		61B709A01BBCECECC93EFB42729B409F /* Pods-JQCollectionViewWaterfallLayout_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JQCollectionViewWaterfallLayout_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6B8EAD47B48911F27CF353009C01D311 /* JQCollectionViewWaterfallLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JQCollectionViewWaterfallLayout-dummy.m"; sourceTree = "<group>"; };
+		7261409F0EBC67E063B96CB8AD572F7D /* Pods-JQCollectionViewWaterfallLayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewWaterfallLayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		76A698429C005EC2C02380357BB8FF82 /* Pods-JQCollectionViewWaterfallLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewWaterfallLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
+		80BB4BA21ACF60B27D944B1F262A68D7 /* Pods_JQCollectionViewWaterfallLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JQCollectionViewWaterfallLayout_Example.framework; path = "Pods-JQCollectionViewWaterfallLayout_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		846BE90294697AAD83D135F2FB717719 /* JQCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JQCollectionViewWaterfallLayout.h; path = JQCollectionViewWaterfallLayout/Classes/JQCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
+		8A8F94A4ED0B894AB3F0BBA9B3F320C9 /* JQCollectionViewWaterfallLayout.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = JQCollectionViewWaterfallLayout.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		92DFDE8F0410952B64DB85AE9B9D6FA7 /* Pods-JQCollectionViewWaterfallLayout_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JQCollectionViewWaterfallLayout_Tests-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9FD78A642507C6FDF2644E97FF20F23D /* Pods-JQCollectionViewWaterfallLayout_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JQCollectionViewWaterfallLayout_Example-frameworks.sh"; sourceTree = "<group>"; };
+		B1E42491806EB740CA66C564A99EC142 /* Pods_JQCollectionViewWaterfallLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JQCollectionViewWaterfallLayout_Tests.framework; path = "Pods-JQCollectionViewWaterfallLayout_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B406B2C50AE8F9977E658C55813E79E2 /* Pods-JQCollectionViewWaterfallLayout_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JQCollectionViewWaterfallLayout_Tests-resources.sh"; sourceTree = "<group>"; };
+		BB0B523137D7948D5601395B64A8C3A6 /* JQCollectionViewWaterfallLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JQCollectionViewWaterfallLayout.modulemap; sourceTree = "<group>"; };
+		C27A24582B980E9505B0C38E5A83D616 /* Pods-JQCollectionViewWaterfallLayout_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JQCollectionViewWaterfallLayout_Example.modulemap"; sourceTree = "<group>"; };
+		C445993C9426FF41A3AB5D52A65B8E92 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		CA82CC5CDDCACF4248F41583C57158DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E133515C8A6C0DDADF3B336886E8F5AC /* Pods-JQCollectionViewWaterfallLayout_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JQCollectionViewWaterfallLayout_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		E1C966EE4F517219197C69D89E23DAF7 /* Pods-JQCollectionViewWaterfallLayout_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JQCollectionViewWaterfallLayout_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E846570CA9347416F6DDB1E65DB6D99F /* Pods-JQCollectionViewWaterfallLayout_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JQCollectionViewWaterfallLayout_Tests-umbrella.h"; sourceTree = "<group>"; };
+		F03653339BFA868806985AD04F10A6F4 /* JQCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JQCollectionViewWaterfallLayout.m; path = JQCollectionViewWaterfallLayout/Classes/JQCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0FA42BB8F44522940FEC8E1499DC09B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635C9EC02355C76CE8E68BD029356F91 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1F14ADF1648FAE43575E7CBCF4BCC8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B929E6D6D781442722FA4EA9CFF327E5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4CE7BDD5E26FE330E79E733E7DE6869 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B97E4B01C1370B7D2B11CE113D9E8FFF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01DAAF22D0315A87365876D21834D927 /* JQCollectionViewWaterfallLayout */ = {
+			isa = PBXGroup;
+			children = (
+				846BE90294697AAD83D135F2FB717719 /* JQCollectionViewWaterfallLayout.h */,
+				F03653339BFA868806985AD04F10A6F4 /* JQCollectionViewWaterfallLayout.m */,
+				4A220D310EFC9302B53FE88384764578 /* Pod */,
+				B82FFF6EFFBEE8914889E79C1F176601 /* Support Files */,
+			);
+			name = JQCollectionViewWaterfallLayout;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		292B91FC621935A732CA0EE9B6DBF96E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47C6544213697C8ED823B18D51A4E510 /* JQCollectionViewWaterfallLayout.framework */,
+				80BB4BA21ACF60B27D944B1F262A68D7 /* Pods_JQCollectionViewWaterfallLayout_Example.framework */,
+				B1E42491806EB740CA66C564A99EC142 /* Pods_JQCollectionViewWaterfallLayout_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A220D310EFC9302B53FE88384764578 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				8A8F94A4ED0B894AB3F0BBA9B3F320C9 /* JQCollectionViewWaterfallLayout.podspec */,
+				079DEC0722DAC336744AA00AFD69C443 /* LICENSE */,
+				C445993C9426FF41A3AB5D52A65B8E92 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		7849023B323061E0900BB7BD569060AB /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				01DAAF22D0315A87365876D21834D927 /* JQCollectionViewWaterfallLayout */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				7849023B323061E0900BB7BD569060AB /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				292B91FC621935A732CA0EE9B6DBF96E /* Products */,
+				BAD4A966C752A90581E18EB9F19B7E41 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B82FFF6EFFBEE8914889E79C1F176601 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1ACC66709400580069C115A2EE213BDF /* Info.plist */,
+				BB0B523137D7948D5601395B64A8C3A6 /* JQCollectionViewWaterfallLayout.modulemap */,
+				0BA05FBC64D4B60B42A9DE5B6261EAB6 /* JQCollectionViewWaterfallLayout.xcconfig */,
+				6B8EAD47B48911F27CF353009C01D311 /* JQCollectionViewWaterfallLayout-dummy.m */,
+				5688C1A207835C7CF84A8F44488C54E1 /* JQCollectionViewWaterfallLayout-prefix.pch */,
+				25EAD6DA84DDC77C2B55FD645CB77E91 /* JQCollectionViewWaterfallLayout-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/JQCollectionViewWaterfallLayout";
+			sourceTree = "<group>";
+		};
+		BAD4A966C752A90581E18EB9F19B7E41 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA68ABD1A272066A012C4A191310B8B7 /* Pods-JQCollectionViewWaterfallLayout_Example */,
+				C1D2A92AA7E624D2A5F90F41C4669461 /* Pods-JQCollectionViewWaterfallLayout_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1D2A92AA7E624D2A5F90F41C4669461 /* Pods-JQCollectionViewWaterfallLayout_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2EFB41905A7D41FFD89BEEEFC6F693D5 /* Info.plist */,
+				39F5156DA7E28B15E2E5F73F035F2C76 /* Pods-JQCollectionViewWaterfallLayout_Tests.modulemap */,
+				E1C966EE4F517219197C69D89E23DAF7 /* Pods-JQCollectionViewWaterfallLayout_Tests-acknowledgements.markdown */,
+				0E70A8447545F98700DB70A020D874AD /* Pods-JQCollectionViewWaterfallLayout_Tests-acknowledgements.plist */,
+				92DFDE8F0410952B64DB85AE9B9D6FA7 /* Pods-JQCollectionViewWaterfallLayout_Tests-dummy.m */,
+				2F7604F8A9EE5EAA8FE3273092D183C7 /* Pods-JQCollectionViewWaterfallLayout_Tests-frameworks.sh */,
+				B406B2C50AE8F9977E658C55813E79E2 /* Pods-JQCollectionViewWaterfallLayout_Tests-resources.sh */,
+				E846570CA9347416F6DDB1E65DB6D99F /* Pods-JQCollectionViewWaterfallLayout_Tests-umbrella.h */,
+				7261409F0EBC67E063B96CB8AD572F7D /* Pods-JQCollectionViewWaterfallLayout_Tests.debug.xcconfig */,
+				5073A3C0FC04C2F09CB50BF0B18EDF32 /* Pods-JQCollectionViewWaterfallLayout_Tests.release.xcconfig */,
+			);
+			name = "Pods-JQCollectionViewWaterfallLayout_Tests";
+			path = "Target Support Files/Pods-JQCollectionViewWaterfallLayout_Tests";
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DA68ABD1A272066A012C4A191310B8B7 /* Pods-JQCollectionViewWaterfallLayout_Example */ = {
+			isa = PBXGroup;
+			children = (
+				CA82CC5CDDCACF4248F41583C57158DF /* Info.plist */,
+				C27A24582B980E9505B0C38E5A83D616 /* Pods-JQCollectionViewWaterfallLayout_Example.modulemap */,
+				61B709A01BBCECECC93EFB42729B409F /* Pods-JQCollectionViewWaterfallLayout_Example-acknowledgements.markdown */,
+				E133515C8A6C0DDADF3B336886E8F5AC /* Pods-JQCollectionViewWaterfallLayout_Example-acknowledgements.plist */,
+				02914DD6505DBF4F4804F6A597DAE3C5 /* Pods-JQCollectionViewWaterfallLayout_Example-dummy.m */,
+				9FD78A642507C6FDF2644E97FF20F23D /* Pods-JQCollectionViewWaterfallLayout_Example-frameworks.sh */,
+				131AA11A2397E08164C5F29004D6E069 /* Pods-JQCollectionViewWaterfallLayout_Example-resources.sh */,
+				2DE48B3996C214EC71AFE646F1F2BD11 /* Pods-JQCollectionViewWaterfallLayout_Example-umbrella.h */,
+				2422F2DEB4B3C5D08904F5DBFE97CFAF /* Pods-JQCollectionViewWaterfallLayout_Example.debug.xcconfig */,
+				76A698429C005EC2C02380357BB8FF82 /* Pods-JQCollectionViewWaterfallLayout_Example.release.xcconfig */,
+			);
+			name = "Pods-JQCollectionViewWaterfallLayout_Example";
+			path = "Target Support Files/Pods-JQCollectionViewWaterfallLayout_Example";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		234E6FD6FAEC4877FE7A53639170096A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B2B4985E0B0107647C3560C97BD8D22 /* Pods-JQCollectionViewWaterfallLayout_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62AE7241C56E09468437C64278B2E392 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1CA692B35CC8D1D41BB9254E7E8F08D0 /* JQCollectionViewWaterfallLayout-umbrella.h in Headers */,
+				D80580DC9671F4F655EEA72D735C244F /* JQCollectionViewWaterfallLayout.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEC4F976B2A392045E1C696031C23FFD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				033F1513DA87AB5C7F0D9652917205F2 /* Pods-JQCollectionViewWaterfallLayout_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7DBE1FC3A06A2BE8C3946880521A1A10 /* JQCollectionViewWaterfallLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD605ECE5683F7D356577C349A8E8A36 /* Build configuration list for PBXNativeTarget "JQCollectionViewWaterfallLayout" */;
+			buildPhases = (
+				202B00BBBA13ED6780BFC5BAAFE01826 /* Sources */,
+				C1F14ADF1648FAE43575E7CBCF4BCC8E /* Frameworks */,
+				62AE7241C56E09468437C64278B2E392 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JQCollectionViewWaterfallLayout;
+			productName = JQCollectionViewWaterfallLayout;
+			productReference = 47C6544213697C8ED823B18D51A4E510 /* JQCollectionViewWaterfallLayout.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DEA7819848370DCC6BCCC14B71D1705F /* Pods-JQCollectionViewWaterfallLayout_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80F93CB1BC96435A9A303293C35DA78F /* Build configuration list for PBXNativeTarget "Pods-JQCollectionViewWaterfallLayout_Tests" */;
+			buildPhases = (
+				CFFD831B3BD46F1D604A9814F7C2795D /* Sources */,
+				C4CE7BDD5E26FE330E79E733E7DE6869 /* Frameworks */,
+				234E6FD6FAEC4877FE7A53639170096A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5DF752C15D29CB83B7C31ABCDF1C0D2 /* PBXTargetDependency */,
+			);
+			name = "Pods-JQCollectionViewWaterfallLayout_Tests";
+			productName = "Pods-JQCollectionViewWaterfallLayout_Tests";
+			productReference = B1E42491806EB740CA66C564A99EC142 /* Pods_JQCollectionViewWaterfallLayout_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FB046BEDC4DCCBAFCFB423C2116F0879 /* Pods-JQCollectionViewWaterfallLayout_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C409F6160BB6F8FD7AD1871A67201B3 /* Build configuration list for PBXNativeTarget "Pods-JQCollectionViewWaterfallLayout_Example" */;
+			buildPhases = (
+				C37EBEC22C4E9D87FC1FF2A091905BF6 /* Sources */,
+				0FA42BB8F44522940FEC8E1499DC09B1 /* Frameworks */,
+				BEC4F976B2A392045E1C696031C23FFD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F8093D9993DB6FCBE3E4CB8D19209AE /* PBXTargetDependency */,
+			);
+			name = "Pods-JQCollectionViewWaterfallLayout_Example";
+			productName = "Pods-JQCollectionViewWaterfallLayout_Example";
+			productReference = 80BB4BA21ACF60B27D944B1F262A68D7 /* Pods_JQCollectionViewWaterfallLayout_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 292B91FC621935A732CA0EE9B6DBF96E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7DBE1FC3A06A2BE8C3946880521A1A10 /* JQCollectionViewWaterfallLayout */,
+				FB046BEDC4DCCBAFCFB423C2116F0879 /* Pods-JQCollectionViewWaterfallLayout_Example */,
+				DEA7819848370DCC6BCCC14B71D1705F /* Pods-JQCollectionViewWaterfallLayout_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		202B00BBBA13ED6780BFC5BAAFE01826 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A042229D0F6C4FB176E8A6E097401DB3 /* JQCollectionViewWaterfallLayout-dummy.m in Sources */,
+				1A86A86F252F4FF6F087ECEB9E31266C /* JQCollectionViewWaterfallLayout.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C37EBEC22C4E9D87FC1FF2A091905BF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4467A992C9CAA7D12606922021114A6 /* Pods-JQCollectionViewWaterfallLayout_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFFD831B3BD46F1D604A9814F7C2795D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1227BDE4DA435E4950A641E53805216 /* Pods-JQCollectionViewWaterfallLayout_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F8093D9993DB6FCBE3E4CB8D19209AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JQCollectionViewWaterfallLayout;
+			target = 7DBE1FC3A06A2BE8C3946880521A1A10 /* JQCollectionViewWaterfallLayout */;
+			targetProxy = 76D522BE2BA169E3FF04A82B40D9D206 /* PBXContainerItemProxy */;
+		};
+		A5DF752C15D29CB83B7C31ABCDF1C0D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-JQCollectionViewWaterfallLayout_Example";
+			target = FB046BEDC4DCCBAFCFB423C2116F0879 /* Pods-JQCollectionViewWaterfallLayout_Example */;
+			targetProxy = 0AEE3E9DAE0C70708FB6579E1AECD711 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		63ECD99BD369158F7CC7EB3766E3AF44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5073A3C0FC04C2F09CB50BF0B18EDF32 /* Pods-JQCollectionViewWaterfallLayout_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JQCollectionViewWaterfallLayout_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JQCollectionViewWaterfallLayout_Tests/Pods-JQCollectionViewWaterfallLayout_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		71D4364ED84CDA92B1AA5B1151A750AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2422F2DEB4B3C5D08904F5DBFE97CFAF /* Pods-JQCollectionViewWaterfallLayout_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JQCollectionViewWaterfallLayout_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JQCollectionViewWaterfallLayout_Example/Pods-JQCollectionViewWaterfallLayout_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		82BF1A8460401FC8CA65B2678745AC05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BA05FBC64D4B60B42A9DE5B6261EAB6 /* JQCollectionViewWaterfallLayout.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JQCollectionViewWaterfallLayout/JQCollectionViewWaterfallLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JQCollectionViewWaterfallLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JQCollectionViewWaterfallLayout/JQCollectionViewWaterfallLayout.modulemap";
+				PRODUCT_MODULE_NAME = JQCollectionViewWaterfallLayout;
+				PRODUCT_NAME = JQCollectionViewWaterfallLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		AC97FEC0D018A564543377F26AB9435B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76A698429C005EC2C02380357BB8FF82 /* Pods-JQCollectionViewWaterfallLayout_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JQCollectionViewWaterfallLayout_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JQCollectionViewWaterfallLayout_Example/Pods-JQCollectionViewWaterfallLayout_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B42B54097A876E8A982CBF5DAA91B1AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		D17D0F72EAB697F4EC16412FA4AE324F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BA05FBC64D4B60B42A9DE5B6261EAB6 /* JQCollectionViewWaterfallLayout.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JQCollectionViewWaterfallLayout/JQCollectionViewWaterfallLayout-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JQCollectionViewWaterfallLayout/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/JQCollectionViewWaterfallLayout/JQCollectionViewWaterfallLayout.modulemap";
+				PRODUCT_MODULE_NAME = JQCollectionViewWaterfallLayout;
+				PRODUCT_NAME = JQCollectionViewWaterfallLayout;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EFCF0B8087DA7D7381B2391892C94055 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7261409F0EBC67E063B96CB8AD572F7D /* Pods-JQCollectionViewWaterfallLayout_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-JQCollectionViewWaterfallLayout_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-JQCollectionViewWaterfallLayout_Tests/Pods-JQCollectionViewWaterfallLayout_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */,
+				B42B54097A876E8A982CBF5DAA91B1AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C409F6160BB6F8FD7AD1871A67201B3 /* Build configuration list for PBXNativeTarget "Pods-JQCollectionViewWaterfallLayout_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71D4364ED84CDA92B1AA5B1151A750AC /* Debug */,
+				AC97FEC0D018A564543377F26AB9435B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80F93CB1BC96435A9A303293C35DA78F /* Build configuration list for PBXNativeTarget "Pods-JQCollectionViewWaterfallLayout_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFCF0B8087DA7D7381B2391892C94055 /* Debug */,
+				63ECD99BD369158F7CC7EB3766E3AF44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD605ECE5683F7D356577C349A8E8A36 /* Build configuration list for PBXNativeTarget "JQCollectionViewWaterfallLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D17D0F72EAB697F4EC16412FA4AE324F /* Debug */,
+				82BF1A8460401FC8CA65B2678745AC05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
