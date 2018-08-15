@@ -191,6 +191,7 @@ NSString *JQGenerateCacheKey(NSString *kind, NSIndexPath *indexPath)
     return [NSString stringWithFormat:@"<%@,%ld,%ld>", kind, (long) indexPath.section, (long) indexPath.item];
 }
 NSString *const JQCollectionElementKindCell = @"JQCollectionElementKindCell";
+static NSString *const kContentHeightWidth = @"kContentHeightWidth";
 @implementation JQCollectionViewWaterfallLayout (cache)
 
 - (void)jq_cacheLayoutAttribute:(UICollectionViewLayoutAttributes *)attribute of:(NSString *)kind at:(NSIndexPath *)indexPath
@@ -215,22 +216,15 @@ NSString *const JQCollectionElementKindCell = @"JQCollectionElementKindCell";
 - (void)prepareLayout
 {
     [super prepareLayout];
-    self.layoutAttributes = [[NSMutableDictionary alloc] init];
-}
-
-#pragma mark -
-#pragma mark - layout
-
-- (CGSize)collectionViewContentSize
-{
     [self.layoutAttributes removeAllObjects];
+    self.layoutAttributes = [[NSMutableDictionary alloc] init];
     NSInteger sections = [self.collectionView numberOfSections];
     BOOL isVertical = self.scrollDirection == UICollectionViewScrollDirectionVertical;
     CGFloat preMax = 0.f;
     for (NSInteger section = 0; section < sections; section++)
     {
         NSInteger items = [self.collectionView numberOfItemsInSection:section];
-
+        
         //*********************** layout info ***********************//
         CGSize size = [self jq_sizeForItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
         CGFloat minimumInteritemSpacing = [self jq_minimumInteritemSpacingForSectionAtIndex:section];
@@ -238,12 +232,12 @@ NSString *const JQCollectionElementKindCell = @"JQCollectionElementKindCell";
         CGSize headerSize = [self jq_referenceSizeForHeaderInSection:section];
         CGSize footerSize = [self jq_referenceSizeForFooterInSection:section];
         UIEdgeInsets sectionInset = [self jq_insetForSectionAtIndex:section];
-
+        
         //*********************** header ***********************//
         UICollectionViewLayoutAttributes *headerAttr = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
         headerAttr.frame = isVertical ? CGRectMake(0, preMax, self.collectionView.frame.size.width, headerSize.height) : CGRectMake(preMax, 0, headerSize.width, self.collectionView.frame.size.height);
         [self jq_cacheLayoutAttribute:headerAttr of:UICollectionElementKindSectionHeader at:[NSIndexPath indexPathForItem:0 inSection:section]];
-
+        
         //*********************** cell ***********************//
         NSInteger rowCount = 0;
         CGFloat interitemSpacing = 0.f;
@@ -298,7 +292,7 @@ NSString *const JQCollectionElementKindCell = @"JQCollectionElementKindCell";
                 }
             }
         }
-
+        
         //*********************** footer ***********************//
         CGFloat biggestXY = isVertical ? [points biggestYPoint].y : [points biggestXPoint].x;
         UICollectionViewLayoutAttributes *footerAttr = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
@@ -306,7 +300,17 @@ NSString *const JQCollectionElementKindCell = @"JQCollectionElementKindCell";
         [self jq_cacheLayoutAttribute:footerAttr of:UICollectionElementKindSectionFooter at:[NSIndexPath indexPathForItem:0 inSection:section]];
         preMax = isVertical ? CGRectGetMaxY(footerAttr.frame) : CGRectGetMaxX(footerAttr.frame);
     }
-    return isVertical ? CGSizeMake(self.collectionView.frame.size.width, preMax) : CGSizeMake(preMax, self.collectionView.frame.size.height);
+    self.layoutAttributes[kContentHeightWidth] = @(preMax);
+}
+
+#pragma mark -
+#pragma mark - layout
+
+- (CGSize)collectionViewContentSize
+{
+    CGFloat contentHeightWidth = [self.layoutAttributes[kContentHeightWidth] floatValue];
+    BOOL isVertical = self.scrollDirection == UICollectionViewScrollDirectionVertical;
+    return isVertical ? CGSizeMake(self.collectionView.frame.size.width, contentHeightWidth) : CGSizeMake(contentHeightWidth, self.collectionView.frame.size.height);
 }
 
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
@@ -314,6 +318,7 @@ NSString *const JQCollectionElementKindCell = @"JQCollectionElementKindCell";
     NSMutableArray *attrs = [[NSMutableArray alloc] init];
     for (UICollectionViewLayoutAttributes *attr in self.layoutAttributes.allValues)
     {
+        if (![attr isKindOfClass:[UICollectionViewLayoutAttributes class]]) continue;
         if (CGRectIntersectsRect(attr.frame, rect))
         {
             [attrs addObject:attr];

@@ -40,7 +40,7 @@ static CGFloat const kPadding = 10.f;
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
-    self.direction = UICollectionViewScrollDirectionHorizontal;
+    self.direction = UICollectionViewScrollDirectionVertical;
     
 }
 
