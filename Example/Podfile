@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'JQCollectionViewWaterfallLayout_Example' do
+  pod 'JQCollectionViewWaterfallLayout', :path => '../'
+
+  target 'JQCollectionViewWaterfallLayout_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
