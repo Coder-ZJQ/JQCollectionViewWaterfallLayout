@@ -10,8 +10,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 |               **Direction**               |                          **Image**                           |
 | :---------------------------------------: | :----------------------------------------------------------: |
-|  UICollectionViewScrollDirectionVertical  | ![](https://github.com/Coder-ZJQ/JQCollectionViewWaterfallLayout/blob/master/images/demo_vertical.gif?raw=true) |
-| UICollectionViewScrollDirectionHorizontal | ![](https://github.com/Coder-ZJQ/JQCollectionViewWaterfallLayout/blob/master/images/demo_horizontal.gif?raw=true) |
+|  UICollectionViewScrollDirectionVertical  | ![](https://github.com/Coder-ZJQ/JQCollectionViewWaterfallLayout/blob/master/Image/demo_vertical.gif?raw=true) |
+| UICollectionViewScrollDirectionHorizontal | ![](https://github.com/Coder-ZJQ/JQCollectionViewWaterfallLayout/blob/master/Image/demo_horizontal.gif?raw=true) |
 
 
 
