@@ -41,7 +41,6 @@ static CGFloat const kPadding = 10.f;
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
     self.direction = UICollectionViewScrollDirectionVertical;
-    
 }
 
 #pragma mark -
@@ -119,10 +118,14 @@ static CGFloat const kPadding = 10.f;
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        // test no header
+        if (indexPath.section % 2 == 1) return nil;
         UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"header" forIndexPath:indexPath];
         header.backgroundColor = [UIColor greenColor];
         return header;
     } else {
+        // test no footer
+        if (indexPath.section % 2 == 0) return nil;
         UICollectionReusableView *footer = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"footer" forIndexPath:indexPath];
         footer.backgroundColor = [UIColor blueColor];
         return footer;
@@ -130,6 +133,7 @@ static CGFloat const kPadding = 10.f;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    // test update
     NSMutableArray *values = self.direction == UICollectionViewScrollDirectionVertical ? self.data[indexPath.section][@"heights"] : self.data[indexPath.section][@"widths"];
     if (values.count == 1) {
         [self.data removeObjectAtIndex:indexPath.section];

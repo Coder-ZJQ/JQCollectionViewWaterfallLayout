@@ -159,11 +159,20 @@
 }
 
 - (BOOL)jq_hasHeaderInSection:(NSInteger)section {
-    return (self.collectionView.delegate && [self.collectionView.delegate respondsToSelector:@selector(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)]);
+    if (self.collectionView.dataSource && [self.collectionView.dataSource respondsToSelector:@selector(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)])
+    {
+        id<UICollectionViewDataSource> datasource = self.collectionView.dataSource;
+        return [datasource collectionView:self.collectionView viewForSupplementaryElementOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]] != nil;
+    }
+    return NO;
 }
 
 - (BOOL)jq_hasFooterInSection:(NSInteger)section {
-    return (self.collectionView.delegate && [self.collectionView.delegate respondsToSelector:@selector(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)]);
+    if (self.collectionView.dataSource && [self.collectionView.dataSource respondsToSelector:@selector(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)]) {
+        id<UICollectionViewDataSource> datasource = self.collectionView.dataSource;
+        return [datasource collectionView:self.collectionView viewForSupplementaryElementOfKind:UICollectionElementKindSectionFooter atIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]] != nil;
+    }
+    return NO;
 }
 
 - (CGSize)jq_referenceSizeForHeaderInSection:(NSInteger)section
