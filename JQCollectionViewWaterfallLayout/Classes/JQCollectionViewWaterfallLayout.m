@@ -159,20 +159,13 @@
 }
 
 - (BOOL)jq_hasHeaderInSection:(NSInteger)section {
-    if (self.collectionView.dataSource && [self.collectionView.dataSource respondsToSelector:@selector(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)])
-    {
-        id<UICollectionViewDataSource> datasource = self.collectionView.dataSource;
-        return [datasource collectionView:self.collectionView viewForSupplementaryElementOfKind:UICollectionElementKindSectionHeader atIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]] != nil;
-    }
-    return NO;
+    CGSize size = [self jq_referenceSizeForHeaderInSection:section];
+    return !CGSizeEqualToSize(size, CGSizeZero);
 }
 
 - (BOOL)jq_hasFooterInSection:(NSInteger)section {
-    if (self.collectionView.dataSource && [self.collectionView.dataSource respondsToSelector:@selector(collectionView:viewForSupplementaryElementOfKind:atIndexPath:)]) {
-        id<UICollectionViewDataSource> datasource = self.collectionView.dataSource;
-        return [datasource collectionView:self.collectionView viewForSupplementaryElementOfKind:UICollectionElementKindSectionFooter atIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]] != nil;
-    }
-    return NO;
+    CGSize size = [self jq_referenceSizeForFooterInSection:section];
+    return !CGSizeEqualToSize(size, CGSizeZero);
 }
 
 - (CGSize)jq_referenceSizeForHeaderInSection:(NSInteger)section
@@ -251,11 +244,14 @@ static NSString *const kContentHeightWidth = @"kContentHeightWidth";
         CGSize headerSize = [self jq_referenceSizeForHeaderInSection:section];
         CGSize footerSize = [self jq_referenceSizeForFooterInSection:section];
         UIEdgeInsets sectionInset = [self jq_insetForSectionAtIndex:section];
+        UIEdgeInsets contentInset = self.collectionView.contentInset;
         
         //*********************** header ***********************//
         if (hasHeader) {
             UICollectionViewLayoutAttributes *headerAttr = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
-            headerAttr.frame = isVertical ? CGRectMake(0, preMax, self.collectionView.frame.size.width, headerSize.height) : CGRectMake(preMax, 0, headerSize.width, self.collectionView.frame.size.height);
+            headerAttr.frame = isVertical ?
+            CGRectMake(0, preMax, self.collectionView.frame.size.width - contentInset.left - contentInset.right, headerSize.height) :
+            CGRectMake(preMax, 0, headerSize.width, self.collectionView.frame.size.height - contentInset.top - contentInset.bottom);
             [self jq_cacheLayoutAttribute:headerAttr of:UICollectionElementKindSectionHeader at:[NSIndexPath indexPathForItem:0 inSection:section]];
             preMax += isVertical ? CGRectGetHeight(headerAttr.frame) : CGRectGetWidth(headerAttr.frame);
         }
@@ -265,13 +261,13 @@ static NSString *const kContentHeightWidth = @"kContentHeightWidth";
         CGFloat interitemSpacing = 0.f;
         if (isVertical)
         {
-            rowCount = (self.collectionView.frame.size.width - sectionInset.left - sectionInset.right + minimumInteritemSpacing) / (size.width + minimumInteritemSpacing);
-            interitemSpacing = rowCount > 1 ? (self.collectionView.frame.size.width - sectionInset.left - sectionInset.right - size.width * rowCount) / (rowCount - 1.f) : minimumInteritemSpacing;
+            rowCount = (self.collectionView.frame.size.width - sectionInset.left - sectionInset.right - contentInset.left - contentInset.right + minimumInteritemSpacing) / (size.width + minimumInteritemSpacing);
+            interitemSpacing = rowCount > 1 ? (self.collectionView.frame.size.width - sectionInset.left - sectionInset.right - contentInset.left - contentInset.right - size.width * rowCount) / (rowCount - 1.f) : minimumInteritemSpacing;
         }
         else
         {
-            rowCount = (self.collectionView.frame.size.height - sectionInset.top - sectionInset.bottom + minimumInteritemSpacing) / (size.height + minimumInteritemSpacing);
-            interitemSpacing = rowCount > 1 ? (self.collectionView.frame.size.height - sectionInset.top - sectionInset.bottom - size.height * rowCount) / (rowCount - 1.f) : minimumInteritemSpacing;
+            rowCount = (self.collectionView.frame.size.height - sectionInset.top - sectionInset.bottom - contentInset.top - contentInset.bottom + minimumInteritemSpacing) / (size.height + minimumInteritemSpacing);
+            interitemSpacing = rowCount > 1 ? (self.collectionView.frame.size.height - sectionInset.top - sectionInset.bottom - contentInset.top - contentInset.bottom - size.height * rowCount) / (rowCount - 1.f) : minimumInteritemSpacing;
         }
         NSMutableArray *points = [[NSMutableArray alloc] init];
         for (NSInteger item = 0; item < items; item++)
@@ -324,7 +320,9 @@ static NSString *const kContentHeightWidth = @"kContentHeightWidth";
         if (hasFooter) {
             CGFloat biggestXY = preMax;
             UICollectionViewLayoutAttributes *footerAttr = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
-            footerAttr.frame = isVertical ? CGRectMake(0, biggestXY, self.collectionView.frame.size.width, footerSize.height) : CGRectMake(biggestXY, 0, footerSize.width, self.collectionView.frame.size.height);
+            footerAttr.frame = isVertical ?
+            CGRectMake(0, biggestXY, self.collectionView.frame.size.width - contentInset.left - contentInset.right, footerSize.height) :
+            CGRectMake(biggestXY, 0, footerSize.width, self.collectionView.frame.size.height - contentInset.top - contentInset.bottom);
             [self jq_cacheLayoutAttribute:footerAttr of:UICollectionElementKindSectionFooter at:[NSIndexPath indexPathForItem:0 inSection:section]];
             preMax = isVertical ? CGRectGetMaxY(footerAttr.frame) : CGRectGetMaxX(footerAttr.frame);
         }
@@ -339,7 +337,7 @@ static NSString *const kContentHeightWidth = @"kContentHeightWidth";
 {
     CGFloat contentHeightWidth = [self.layoutAttributes[kContentHeightWidth] floatValue];
     BOOL isVertical = self.scrollDirection == UICollectionViewScrollDirectionVertical;
-    return isVertical ? CGSizeMake(self.collectionView.frame.size.width, contentHeightWidth) : CGSizeMake(contentHeightWidth, self.collectionView.frame.size.height);
+    return isVertical ? CGSizeMake(self.collectionView.frame.size.width - self.collectionView.contentInset.left - self.collectionView.contentInset.right, contentHeightWidth) : CGSizeMake(contentHeightWidth, self.collectionView.frame.size.height - self.collectionView.contentInset.top - self.collectionView.contentInset.bottom);
 }
 
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect

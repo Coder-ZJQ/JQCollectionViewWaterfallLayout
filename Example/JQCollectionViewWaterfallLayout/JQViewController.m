@@ -18,7 +18,7 @@ NSMutableArray *randomValues() {
     }
     return heights;
 }
-static CGFloat const kPadding = 10.f;
+static CGFloat const kPadding = 5.f;
 #define kHeaderFooterSize CGSizeMake(50.f, 50.f)
 
 @interface JQViewController ()<UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
@@ -37,6 +37,7 @@ static CGFloat const kPadding = 10.f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.collectionView.contentInset = UIEdgeInsetsMake(30, 30, 30, 30);
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
@@ -65,14 +66,14 @@ static CGFloat const kPadding = 10.f;
     if (!_data) {
         NSMutableArray *data = [[NSMutableArray alloc] init];
         if (self.direction == UICollectionViewScrollDirectionVertical) {
-            CGFloat width = [UIScreen mainScreen].bounds.size.width;
+            CGFloat width = [UIScreen mainScreen].bounds.size.width - self.collectionView.contentInset.left - self.collectionView.contentInset.right;
             for (int i = 5; i > 1; i --) {
-                [data addObject:@{@"width": @((width - kPadding * (i + 1)) / i - 1.f),@"heights": randomValues()}];
+                [data addObject:@{@"width": @((width - 1.f - kPadding * (i + 1)) / i),@"heights": randomValues()}];
             }
         } else {
-            CGFloat height = [UIScreen mainScreen].bounds.size.height - 44.f - CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
+            CGFloat height = [UIScreen mainScreen].bounds.size.height - 44.f - CGRectGetHeight([UIApplication sharedApplication].statusBarFrame) - self.collectionView.contentInset.top - self.collectionView.contentInset.bottom;
             for (int i = 6; i > 2; i --) {
-                [data addObject:@{@"widths": randomValues(),@"height": @((height - kPadding * (i + 1)) / i - 1.f)}];
+                [data addObject:@{@"widths": randomValues(),@"height": @((height - 1.f - kPadding * (i + 1)) / i)}];
             }
         }
         _data = data;
@@ -118,14 +119,10 @@ static CGFloat const kPadding = 10.f;
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        // test no header
-        if (indexPath.section % 2 == 1) return nil;
         UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"header" forIndexPath:indexPath];
         header.backgroundColor = [UIColor greenColor];
         return header;
     } else {
-        // test no footer
-        if (indexPath.section % 2 == 0) return nil;
         UICollectionReusableView *footer = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"footer" forIndexPath:indexPath];
         footer.backgroundColor = [UIColor blueColor];
         return footer;
