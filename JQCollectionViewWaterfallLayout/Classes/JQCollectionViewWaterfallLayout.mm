@@ -268,6 +268,7 @@ static NSString *const kContentHeightWidth = @"kContentHeightWidth";
             rowCount = (self.collectionView.frame.size.height - sectionInset.top - sectionInset.bottom - contentInset.top - contentInset.bottom + minimumInteritemSpacing) / (size.height + minimumInteritemSpacing);
             interitemSpacing = rowCount > 1 ? (self.collectionView.frame.size.height - sectionInset.top - sectionInset.bottom - contentInset.top - contentInset.bottom - size.height * rowCount) / (rowCount - 1.f) : minimumInteritemSpacing;
         }
+        rowCount = rowCount > items ? (int)items : rowCount;
         CGPoint *points = new CGPoint[rowCount];
         for (NSInteger item = 0; item < items; item++)
         {
@@ -278,13 +279,13 @@ static NSString *const kContentHeightWidth = @"kContentHeightWidth";
                 CGFloat x, y;
                 if (isVertical)
                 {
-                    x = rowCount == 1 ? (self.collectionView.frame.size.width - itemSize.width) / 2.f : (sectionInset.left + (size.width + interitemSpacing) * item);
+                    x = sectionInset.left + (size.width + interitemSpacing) * item;
                     y = preMax + sectionInset.top;
                 }
                 else
                 {
                     x = preMax + sectionInset.left;
-                    y = rowCount == 1 ? (self.collectionView.frame.size.height - itemSize.height) / 2.f : (sectionInset.top + (size.height + interitemSpacing) * item);
+                    y = sectionInset.top + (size.height + interitemSpacing) * item;
                 }
                 UICollectionViewLayoutAttributes *cellAttr = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
                 cellAttr.frame = isVertical ? CGRectMake(x, y, size.width, itemSize.height) : CGRectMake(x, y, itemSize.width, size.height);

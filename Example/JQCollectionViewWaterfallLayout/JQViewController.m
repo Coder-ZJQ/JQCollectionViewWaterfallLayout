@@ -36,11 +36,10 @@ static CGFloat const kPadding = 5.f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.collectionView.contentInset = UIEdgeInsetsMake(30, 30, 30, 30);
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
-    self.direction = UICollectionViewScrollDirectionHorizontal;
+    self.direction = UICollectionViewScrollDirectionVertical;
 }
 
 #pragma mark -
@@ -66,12 +65,12 @@ static CGFloat const kPadding = 5.f;
         NSMutableArray *data = [[NSMutableArray alloc] init];
         if (self.direction == UICollectionViewScrollDirectionVertical) {
             CGFloat width = [UIScreen mainScreen].bounds.size.width - self.collectionView.contentInset.left - self.collectionView.contentInset.right;
-            for (int i = 5; i > 1; i --) {
+            for (int i = 2; i < 5; i ++) {
                 [data addObject:@{@"width": @((width - 1.f - kPadding * (i + 1)) / i),@"heights": randomValues()}];
             }
         } else {
             CGFloat height = [UIScreen mainScreen].bounds.size.height - 44.f - CGRectGetHeight([UIApplication sharedApplication].statusBarFrame) - self.collectionView.contentInset.top - self.collectionView.contentInset.bottom;
-            for (int i = 6; i > 2; i --) {
+            for (int i = 3; i < 6; i ++) {
                 [data addObject:@{@"widths": randomValues(),@"height": @((height - 1.f - kPadding * (i + 1)) / i)}];
             }
         }
