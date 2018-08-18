@@ -14,14 +14,12 @@
 
 @end
 
-@implementation NSMutableArray (point)
-
-- (CGPoint)biggestYPoint
+CGPoint CGPointBiggestYPoint(int count, CGPoint points[])
 {
     CGPoint biggest = CGPointMake(CGFLOAT_MIN, CGFLOAT_MIN);
-    for (NSValue *value in self)
+    for (int i = 0; i < count; i++)
     {
-        CGPoint point = [value CGPointValue];
+        CGPoint point = points[i];
         if (point.y > biggest.y)
         {
             biggest = point;
@@ -30,12 +28,12 @@
     return biggest;
 }
 
-- (CGPoint)biggestXPoint
+CGPoint CGPointBiggestXPoint(int count, CGPoint points[])
 {
     CGPoint biggest = CGPointMake(CGFLOAT_MIN, CGFLOAT_MIN);
-    for (NSValue *value in self)
+    for (int i = 0; i < count; i++)
     {
-        CGPoint point = [value CGPointValue];
+        CGPoint point = points[i];
         if (point.x > biggest.x)
         {
             biggest = point;
@@ -44,12 +42,12 @@
     return biggest;
 }
 
-- (CGPoint)smallestYPoint
+CGPoint CGPointSmallestYPoint(int count, CGPoint points[])
 {
     CGPoint smallest = CGPointMake(CGFLOAT_MAX, CGFLOAT_MAX);
-    for (NSValue *value in self)
+    for (int i = 0; i < count; i++)
     {
-        CGPoint point = [value CGPointValue];
+        CGPoint point = points[i];
         if (point.y < smallest.y)
         {
             smallest = point;
@@ -58,12 +56,12 @@
     return smallest;
 }
 
-- (CGPoint)smallestXPoint
+CGPoint CGPointSmallestXPoint(int count, CGPoint points[])
 {
     CGPoint smallest = CGPointMake(CGFLOAT_MAX, CGFLOAT_MAX);
-    for (NSValue *value in self)
+    for (int i = 0; i < count; i++)
     {
-        CGPoint point = [value CGPointValue];
+        CGPoint point = points[i];
         if (point.x < smallest.x)
         {
             smallest = point;
@@ -72,37 +70,37 @@
     return smallest;
 }
 
-- (void)replaceSmallestYPointWithPoint:(CGPoint)point
+void CGPointReplaceSmallestYPoint(CGPoint point, CGPoint points[], int count)
 {
+    int index = 0;
     CGPoint smallest = CGPointMake(CGFLOAT_MAX, CGFLOAT_MAX);
-    for (NSValue *value in self)
+    for (int i = 0; i < count; i++)
     {
-        CGPoint point = [value CGPointValue];
+        CGPoint point = points[i];
         if (point.y < smallest.y)
         {
             smallest = point;
+            index = i;
         }
     }
-    NSInteger index = [self indexOfObject:@(smallest)];
-    [self replaceObjectAtIndex:index withObject:@(point)];
+    points[index] = point;
 }
 
-- (void)replaceSmallestXPointWithPoint:(CGPoint)point
+void CGPointReplaceSmallestXPoint(CGPoint point, CGPoint points[], int count)
 {
+    int index = 0;
     CGPoint smallest = CGPointMake(CGFLOAT_MAX, CGFLOAT_MAX);
-    for (NSValue *value in self)
+    for (int i = 0; i < count; i++)
     {
-        CGPoint point = [value CGPointValue];
+        CGPoint point = points[i];
         if (point.x < smallest.x)
         {
             smallest = point;
+            index = i;
         }
     }
-    NSInteger index = [self indexOfObject:@(smallest)];
-    [self replaceObjectAtIndex:index withObject:@(point)];
+    points[index] = point;
 }
-
-@end
 
 @implementation JQCollectionViewWaterfallLayout (attributes)
 
@@ -158,12 +156,14 @@
     }
 }
 
-- (BOOL)jq_hasHeaderInSection:(NSInteger)section {
+- (BOOL)jq_hasHeaderInSection:(NSInteger)section
+{
     CGSize size = [self jq_referenceSizeForHeaderInSection:section];
     return !CGSizeEqualToSize(size, CGSizeZero);
 }
 
-- (BOOL)jq_hasFooterInSection:(NSInteger)section {
+- (BOOL)jq_hasFooterInSection:(NSInteger)section
+{
     CGSize size = [self jq_referenceSizeForFooterInSection:section];
     return !CGSizeEqualToSize(size, CGSizeZero);
 }
@@ -202,6 +202,7 @@ NSString *JQGenerateCacheKey(NSString *kind, NSIndexPath *indexPath)
 }
 NSString *const JQCollectionElementKindCell = @"JQCollectionElementKindCell";
 static NSString *const kContentHeightWidth = @"kContentHeightWidth";
+
 @implementation JQCollectionViewWaterfallLayout (cache)
 
 - (void)jq_cacheLayoutAttribute:(UICollectionViewLayoutAttributes *)attribute of:(NSString *)kind at:(NSIndexPath *)indexPath
@@ -225,7 +226,6 @@ static NSString *const kContentHeightWidth = @"kContentHeightWidth";
 
 - (void)prepareLayout
 {
-    [super prepareLayout];
     [self.layoutAttributes removeAllObjects];
     self.layoutAttributes = [[NSMutableDictionary alloc] init];
     NSInteger sections = [self.collectionView numberOfSections];
@@ -245,19 +245,18 @@ static NSString *const kContentHeightWidth = @"kContentHeightWidth";
         CGSize footerSize = [self jq_referenceSizeForFooterInSection:section];
         UIEdgeInsets sectionInset = [self jq_insetForSectionAtIndex:section];
         UIEdgeInsets contentInset = self.collectionView.contentInset;
-        
+
         //*********************** header ***********************//
-        if (hasHeader) {
+        if (hasHeader)
+        {
             UICollectionViewLayoutAttributes *headerAttr = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
-            headerAttr.frame = isVertical ?
-            CGRectMake(0, preMax, self.collectionView.frame.size.width - contentInset.left - contentInset.right, headerSize.height) :
-            CGRectMake(preMax, 0, headerSize.width, self.collectionView.frame.size.height - contentInset.top - contentInset.bottom);
+            headerAttr.frame = isVertical ? CGRectMake(0, preMax, self.collectionView.frame.size.width - contentInset.left - contentInset.right, headerSize.height) : CGRectMake(preMax, 0, headerSize.width, self.collectionView.frame.size.height - contentInset.top - contentInset.bottom);
             [self jq_cacheLayoutAttribute:headerAttr of:UICollectionElementKindSectionHeader at:[NSIndexPath indexPathForItem:0 inSection:section]];
             preMax += isVertical ? CGRectGetHeight(headerAttr.frame) : CGRectGetWidth(headerAttr.frame);
         }
-        
+
         //*********************** cell ***********************//
-        NSInteger rowCount = 0;
+        int rowCount = 0;
         CGFloat interitemSpacing = 0.f;
         if (isVertical)
         {
@@ -269,7 +268,7 @@ static NSString *const kContentHeightWidth = @"kContentHeightWidth";
             rowCount = (self.collectionView.frame.size.height - sectionInset.top - sectionInset.bottom - contentInset.top - contentInset.bottom + minimumInteritemSpacing) / (size.height + minimumInteritemSpacing);
             interitemSpacing = rowCount > 1 ? (self.collectionView.frame.size.height - sectionInset.top - sectionInset.bottom - contentInset.top - contentInset.bottom - size.height * rowCount) / (rowCount - 1.f) : minimumInteritemSpacing;
         }
-        NSMutableArray *points = [[NSMutableArray alloc] init];
+        CGPoint *points = new CGPoint[rowCount];
         for (NSInteger item = 0; item < items; item++)
         {
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:item inSection:section];
@@ -290,39 +289,35 @@ static NSString *const kContentHeightWidth = @"kContentHeightWidth";
                 UICollectionViewLayoutAttributes *cellAttr = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
                 cellAttr.frame = isVertical ? CGRectMake(x, y, size.width, itemSize.height) : CGRectMake(x, y, itemSize.width, size.height);
                 [self jq_cacheLayoutAttribute:cellAttr of:JQCollectionElementKindCell at:indexPath];
-                [points addObject:isVertical ? @(CGPointMake(x, y + itemSize.height)) : @(CGPointMake(x + itemSize.width, y))];
+                points[item] = isVertical ? CGPointMake(x, y + itemSize.height) : CGPointMake(x + itemSize.width, y);
             }
             else
             {
-                CGPoint small = isVertical ? [points smallestYPoint] : [points smallestXPoint];
+                CGPoint small = isVertical ? CGPointSmallestYPoint(rowCount, points) : CGPointSmallestXPoint(rowCount, points);
                 CGFloat x = isVertical ? small.x : small.x + minimumLineSpacing;
                 CGFloat y = isVertical ? small.y + minimumLineSpacing : small.y;
                 UICollectionViewLayoutAttributes *cellAttr = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
                 cellAttr.frame = isVertical ? CGRectMake(x, y, size.width, itemSize.height) : CGRectMake(x, y, itemSize.width, size.height);
                 [self jq_cacheLayoutAttribute:cellAttr of:JQCollectionElementKindCell at:indexPath];
-                if (isVertical)
-                {
-                    [points replaceSmallestYPointWithPoint:CGPointMake(x, y + itemSize.height)];
-                }
-                else
-                {
-                    [points replaceSmallestXPointWithPoint:CGPointMake(x + itemSize.width, y)];
-                }
+                isVertical ? CGPointReplaceSmallestYPoint(CGPointMake(x, y + itemSize.height), points, rowCount) : CGPointReplaceSmallestXPoint(CGPointMake(x + itemSize.width, y), points, rowCount);
             }
         }
-        if (items == 0) {
+        if (items == 0)
+        {
             preMax += isVertical ? sectionInset.top + sectionInset.bottom : sectionInset.left + sectionInset.right;
-        } else {
-            preMax = isVertical ? [points biggestYPoint].y + sectionInset.bottom : [points biggestXPoint].x + sectionInset.right;
         }
+        else
+        {
+            preMax = isVertical ? CGPointBiggestYPoint(rowCount, points).y + sectionInset.bottom : CGPointBiggestXPoint(rowCount, points).x + sectionInset.right;
+        }
+        delete[] points;
         
         //*********************** footer ***********************//
-        if (hasFooter) {
+        if (hasFooter)
+        {
             CGFloat biggestXY = preMax;
             UICollectionViewLayoutAttributes *footerAttr = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter withIndexPath:[NSIndexPath indexPathForItem:0 inSection:section]];
-            footerAttr.frame = isVertical ?
-            CGRectMake(0, biggestXY, self.collectionView.frame.size.width - contentInset.left - contentInset.right, footerSize.height) :
-            CGRectMake(biggestXY, 0, footerSize.width, self.collectionView.frame.size.height - contentInset.top - contentInset.bottom);
+            footerAttr.frame = isVertical ? CGRectMake(0, biggestXY, self.collectionView.frame.size.width - contentInset.left - contentInset.right, footerSize.height) : CGRectMake(biggestXY, 0, footerSize.width, self.collectionView.frame.size.height - contentInset.top - contentInset.bottom);
             [self jq_cacheLayoutAttribute:footerAttr of:UICollectionElementKindSectionFooter at:[NSIndexPath indexPathForItem:0 inSection:section]];
             preMax = isVertical ? CGRectGetMaxY(footerAttr.frame) : CGRectGetMaxX(footerAttr.frame);
         }

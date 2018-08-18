@@ -32,7 +32,6 @@ static CGFloat const kPadding = 5.f;
 
 @end
 
-
 @implementation JQViewController
 
 - (void)viewDidLoad {
@@ -41,7 +40,7 @@ static CGFloat const kPadding = 5.f;
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
-    self.direction = UICollectionViewScrollDirectionVertical;
+    self.direction = UICollectionViewScrollDirectionHorizontal;
 }
 
 #pragma mark -

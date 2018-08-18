@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		033F1513DA87AB5C7F0D9652917205F2 /* Pods-JQCollectionViewWaterfallLayout_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DE48B3996C214EC71AFE646F1F2BD11 /* Pods-JQCollectionViewWaterfallLayout_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A86A86F252F4FF6F087ECEB9E31266C /* JQCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03653339BFA868806985AD04F10A6F4 /* JQCollectionViewWaterfallLayout.m */; };
+		1A86A86F252F4FF6F087ECEB9E31266C /* JQCollectionViewWaterfallLayout.mm in Sources */ = {isa = PBXBuildFile; fileRef = F03653339BFA868806985AD04F10A6F4 /* JQCollectionViewWaterfallLayout.mm */; };
 		1CA692B35CC8D1D41BB9254E7E8F08D0 /* JQCollectionViewWaterfallLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25EAD6DA84DDC77C2B55FD645CB77E91 /* JQCollectionViewWaterfallLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		635C9EC02355C76CE8E68BD029356F91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		7B2B4985E0B0107647C3560C97BD8D22 /* Pods-JQCollectionViewWaterfallLayout_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E846570CA9347416F6DDB1E65DB6D99F /* Pods-JQCollectionViewWaterfallLayout_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -39,7 +39,7 @@
 
 /* Begin PBXFileReference section */
 		02914DD6505DBF4F4804F6A597DAE3C5 /* Pods-JQCollectionViewWaterfallLayout_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JQCollectionViewWaterfallLayout_Example-dummy.m"; sourceTree = "<group>"; };
-		079DEC0722DAC336744AA00AFD69C443 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		079DEC0722DAC336744AA00AFD69C443 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0BA05FBC64D4B60B42A9DE5B6261EAB6 /* JQCollectionViewWaterfallLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JQCollectionViewWaterfallLayout.xcconfig; sourceTree = "<group>"; };
 		0E70A8447545F98700DB70A020D874AD /* Pods-JQCollectionViewWaterfallLayout_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JQCollectionViewWaterfallLayout_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		131AA11A2397E08164C5F29004D6E069 /* Pods-JQCollectionViewWaterfallLayout_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JQCollectionViewWaterfallLayout_Example-resources.sh"; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		2EFB41905A7D41FFD89BEEEFC6F693D5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F7604F8A9EE5EAA8FE3273092D183C7 /* Pods-JQCollectionViewWaterfallLayout_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JQCollectionViewWaterfallLayout_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		39F5156DA7E28B15E2E5F73F035F2C76 /* Pods-JQCollectionViewWaterfallLayout_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JQCollectionViewWaterfallLayout_Tests.modulemap"; sourceTree = "<group>"; };
-		47C6544213697C8ED823B18D51A4E510 /* JQCollectionViewWaterfallLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JQCollectionViewWaterfallLayout.framework; path = JQCollectionViewWaterfallLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47C6544213697C8ED823B18D51A4E510 /* JQCollectionViewWaterfallLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JQCollectionViewWaterfallLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5073A3C0FC04C2F09CB50BF0B18EDF32 /* Pods-JQCollectionViewWaterfallLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewWaterfallLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5688C1A207835C7CF84A8F44488C54E1 /* JQCollectionViewWaterfallLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JQCollectionViewWaterfallLayout-prefix.pch"; sourceTree = "<group>"; };
 		61B709A01BBCECECC93EFB42729B409F /* Pods-JQCollectionViewWaterfallLayout_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JQCollectionViewWaterfallLayout_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -58,22 +58,22 @@
 		6B8EAD47B48911F27CF353009C01D311 /* JQCollectionViewWaterfallLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JQCollectionViewWaterfallLayout-dummy.m"; sourceTree = "<group>"; };
 		7261409F0EBC67E063B96CB8AD572F7D /* Pods-JQCollectionViewWaterfallLayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewWaterfallLayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		76A698429C005EC2C02380357BB8FF82 /* Pods-JQCollectionViewWaterfallLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JQCollectionViewWaterfallLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
-		80BB4BA21ACF60B27D944B1F262A68D7 /* Pods_JQCollectionViewWaterfallLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JQCollectionViewWaterfallLayout_Example.framework; path = "Pods-JQCollectionViewWaterfallLayout_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80BB4BA21ACF60B27D944B1F262A68D7 /* Pods_JQCollectionViewWaterfallLayout_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JQCollectionViewWaterfallLayout_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		846BE90294697AAD83D135F2FB717719 /* JQCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JQCollectionViewWaterfallLayout.h; path = JQCollectionViewWaterfallLayout/Classes/JQCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
-		8A8F94A4ED0B894AB3F0BBA9B3F320C9 /* JQCollectionViewWaterfallLayout.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = JQCollectionViewWaterfallLayout.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8A8F94A4ED0B894AB3F0BBA9B3F320C9 /* JQCollectionViewWaterfallLayout.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = JQCollectionViewWaterfallLayout.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		92DFDE8F0410952B64DB85AE9B9D6FA7 /* Pods-JQCollectionViewWaterfallLayout_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JQCollectionViewWaterfallLayout_Tests-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FD78A642507C6FDF2644E97FF20F23D /* Pods-JQCollectionViewWaterfallLayout_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JQCollectionViewWaterfallLayout_Example-frameworks.sh"; sourceTree = "<group>"; };
-		B1E42491806EB740CA66C564A99EC142 /* Pods_JQCollectionViewWaterfallLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_JQCollectionViewWaterfallLayout_Tests.framework; path = "Pods-JQCollectionViewWaterfallLayout_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1E42491806EB740CA66C564A99EC142 /* Pods_JQCollectionViewWaterfallLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JQCollectionViewWaterfallLayout_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B406B2C50AE8F9977E658C55813E79E2 /* Pods-JQCollectionViewWaterfallLayout_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JQCollectionViewWaterfallLayout_Tests-resources.sh"; sourceTree = "<group>"; };
 		BB0B523137D7948D5601395B64A8C3A6 /* JQCollectionViewWaterfallLayout.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JQCollectionViewWaterfallLayout.modulemap; sourceTree = "<group>"; };
 		C27A24582B980E9505B0C38E5A83D616 /* Pods-JQCollectionViewWaterfallLayout_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-JQCollectionViewWaterfallLayout_Example.modulemap"; sourceTree = "<group>"; };
-		C445993C9426FF41A3AB5D52A65B8E92 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		C445993C9426FF41A3AB5D52A65B8E92 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CA82CC5CDDCACF4248F41583C57158DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E133515C8A6C0DDADF3B336886E8F5AC /* Pods-JQCollectionViewWaterfallLayout_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-JQCollectionViewWaterfallLayout_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		E1C966EE4F517219197C69D89E23DAF7 /* Pods-JQCollectionViewWaterfallLayout_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-JQCollectionViewWaterfallLayout_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E846570CA9347416F6DDB1E65DB6D99F /* Pods-JQCollectionViewWaterfallLayout_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JQCollectionViewWaterfallLayout_Tests-umbrella.h"; sourceTree = "<group>"; };
-		F03653339BFA868806985AD04F10A6F4 /* JQCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JQCollectionViewWaterfallLayout.m; path = JQCollectionViewWaterfallLayout/Classes/JQCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
+		F03653339BFA868806985AD04F10A6F4 /* JQCollectionViewWaterfallLayout.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = JQCollectionViewWaterfallLayout.mm; path = JQCollectionViewWaterfallLayout/Classes/JQCollectionViewWaterfallLayout.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				846BE90294697AAD83D135F2FB717719 /* JQCollectionViewWaterfallLayout.h */,
-				F03653339BFA868806985AD04F10A6F4 /* JQCollectionViewWaterfallLayout.m */,
+				F03653339BFA868806985AD04F10A6F4 /* JQCollectionViewWaterfallLayout.mm */,
 				4A220D310EFC9302B53FE88384764578 /* Pod */,
 				B82FFF6EFFBEE8914889E79C1F176601 /* Support Files */,
 			);
@@ -348,7 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A042229D0F6C4FB176E8A6E097401DB3 /* JQCollectionViewWaterfallLayout-dummy.m in Sources */,
-				1A86A86F252F4FF6F087ECEB9E31266C /* JQCollectionViewWaterfallLayout.m in Sources */,
+				1A86A86F252F4FF6F087ECEB9E31266C /* JQCollectionViewWaterfallLayout.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
