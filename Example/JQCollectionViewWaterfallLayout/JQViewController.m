@@ -8,16 +8,8 @@
 
 #import "JQViewController.h"
 #import "JQCollectionViewWaterfallLayout.h"
+#import "JQCollectionViewImageCell.h"
 
-NSMutableArray *randomValues() {
-    NSMutableArray *heights = [[NSMutableArray alloc] init];
-    NSInteger count = 30 + arc4random() % 10;
-    for (int j = 0; j < count; j++)
-    {
-        [heights addObject:@(100 + arc4random() % 100)];
-    }
-    return heights;
-}
 static CGFloat const kPadding = 5.f;
 #define kHeaderFooterSize CGSizeMake(50.f, 50.f)
 
@@ -36,7 +28,7 @@ static CGFloat const kPadding = 5.f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"JQCollectionViewImageCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
     self.direction = UICollectionViewScrollDirectionVertical;
@@ -62,19 +54,28 @@ static CGFloat const kPadding = 5.f;
 
 - (NSMutableArray *)data {
     if (!_data) {
-        NSMutableArray *data = [[NSMutableArray alloc] init];
-        if (self.direction == UICollectionViewScrollDirectionVertical) {
-            CGFloat width = [UIScreen mainScreen].bounds.size.width - self.collectionView.contentInset.left - self.collectionView.contentInset.right;
-            for (int i = 2; i < 5; i ++) {
-                [data addObject:@{@"width": @((width - 1.f - kPadding * (i + 1)) / i),@"heights": randomValues()}];
-            }
-        } else {
-            CGFloat height = [UIScreen mainScreen].bounds.size.height - 44.f - CGRectGetHeight([UIApplication sharedApplication].statusBarFrame) - self.collectionView.contentInset.top - self.collectionView.contentInset.bottom;
-            for (int i = 3; i < 6; i ++) {
-                [data addObject:@{@"widths": randomValues(),@"height": @((height - 1.f - kPadding * (i + 1)) / i)}];
-            }
+        _data = [[NSMutableArray alloc] init];
+        NSMutableArray *arr1 = [[NSMutableArray alloc] init];
+        for (int i = 0; i < 31; i ++) {
+            NSString *imageName = [NSString stringWithFormat:@"image_%d.jpg", i];
+            UIImage *image = [UIImage imageNamed:imageName];
+            if (image) [arr1 addObject:image];
         }
-        _data = data;
+        NSMutableArray *arr2 = [[NSMutableArray alloc] init];
+        for (int i = 31; i < 61; i ++) {
+            NSString *imageName = [NSString stringWithFormat:@"image_%d.jpg", i];
+            UIImage *image = [UIImage imageNamed:imageName];
+            if (image) [arr2 addObject:image];
+        }
+        NSMutableArray *arr3 = [[NSMutableArray alloc] init];
+        for (int i = 61; i < 92; i ++) {
+            NSString *imageName = [NSString stringWithFormat:@"image_%d.jpg", i];
+            UIImage *image = [UIImage imageNamed:imageName];
+            if (image) [arr3 addObject:image];
+        }
+        [_data addObject:arr1];
+        [_data addObject:arr2];
+        [_data addObject:arr3];
     }
     return _data;
 }
@@ -91,28 +92,27 @@ static CGFloat const kPadding = 5.f;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UIEdgeInsets insets = [self collectionView:collectionView layout:collectionViewLayout insetForSectionAtIndex:indexPath.section];
+    CGFloat minimumInteritemSpacing = [self collectionView:collectionView layout:collectionViewLayout minimumInteritemSpacingForSectionAtIndex:indexPath.section];
+    UIImage *image = self.data[indexPath.section][indexPath.item];
     if (self.direction == UICollectionViewScrollDirectionVertical) {
-        CGFloat width = [self.data[indexPath.section][@"width"] floatValue];
-        NSArray *heights = self.data[indexPath.section][@"heights"];
-        CGFloat height = [heights[indexPath.item] floatValue];
-        return CGSizeMake(width, height);
+        CGFloat width =(CGRectGetWidth(collectionView.frame) - insets.left - insets.right - collectionView.contentInset.left - collectionView.contentInset.right + minimumInteritemSpacing) / (CGFloat)(2 + indexPath.section) - minimumInteritemSpacing;
+        return CGSizeMake(width, image.size.height / image.size.width * width);
     } else {
-        CGFloat height = [self.data[indexPath.section][@"height"] floatValue];
-        NSArray *widths = self.data[indexPath.section][@"widths"];
-        CGFloat width = [widths[indexPath.item] floatValue];
-        return CGSizeMake(width, height);
+        CGFloat height =(CGRectGetHeight(collectionView.frame) - insets.top - insets.bottom - collectionView.contentInset.top - collectionView.contentInset.bottom + minimumInteritemSpacing) / (CGFloat)(self.data.count + 1 - indexPath.section) - minimumInteritemSpacing;
+        return CGSizeMake(image.size.width / image.size.height * height, height);
     }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
+    JQCollectionViewImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    cell.image = self.data[indexPath.section][indexPath.item];
     return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSArray *values = self.direction == UICollectionViewScrollDirectionVertical ? self.data[section][@"heights"] : self.data[section][@"widths"];
-    return values.count;
+    NSArray *images = self.data[section];
+    return images.count;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -129,12 +129,12 @@ static CGFloat const kPadding = 5.f;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     // test update
-    NSMutableArray *values = self.direction == UICollectionViewScrollDirectionVertical ? self.data[indexPath.section][@"heights"] : self.data[indexPath.section][@"widths"];
-    if (values.count == 1) {
+    NSMutableArray *images = self.data[indexPath.section];
+    if (images.count == 1) {
         [self.data removeObjectAtIndex:indexPath.section];
         [collectionView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section]];
     } else {
-        [values removeObjectAtIndex:indexPath.item];
+        [images removeObjectAtIndex:indexPath.item];
         [collectionView deleteItemsAtIndexPaths:@[indexPath]];
     }
 }

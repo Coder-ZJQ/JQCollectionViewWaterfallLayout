@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class JQCollectionViewWaterfallLayout;
 UIKIT_EXTERN NSString * _Nonnull const JQCollectionElementKindCell NS_AVAILABLE_IOS(6_0);
 
 @interface JQCollectionViewWaterfallLayout : UICollectionViewFlowLayout
