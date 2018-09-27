@@ -13,6 +13,15 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 |  UICollectionViewScrollDirectionVertical  | ![](https://github.com/Coder-ZJQ/JQCollectionViewWaterfallLayout/blob/master/Image/demo_vertical.gif?raw=true) |
 | UICollectionViewScrollDirectionHorizontal | ![](https://github.com/Coder-ZJQ/JQCollectionViewWaterfallLayout/blob/master/Image/demo_horizontal.gif?raw=true) |
 
+## Feature
+
+- [x] vertical and horizontal scroll direction;
+- [x] different row/col count with different section;
+- [x] section headerView and footerView;
+- [x] contentInset of collectionView;
+- [x] inset for section;
+- [x] updates of UICollectionView cells;
+- [x] same usage as UICollectionViewFlowLayout.
 
 
 ## Requirements
@@ -43,7 +52,7 @@ Same usage as UICollectionViewFlowLayout. But you should pay attention to the  *
 }
 ```
 
-(see more detail in **Example** project)
+(see more detail in [**Example Project**](https://github.com/Coder-ZJQ/JQCollectionViewWaterfallLayout/blob/7152814d902b63099e878fbb5d92d986ca8496fa/Example/JQCollectionViewWaterfallLayout/JQViewController.m#L97))
 
 ## Author
 
