@@ -10,8 +10,10 @@
 #import "JQCollectionViewWaterfallLayout.h"
 #import "JQCollectionViewImageCell.h"
 
-static CGFloat const kPadding = 5.f;
-#define kHeaderFooterSize CGSizeMake(50.f, 50.f)
+#define kPadding            5.f
+#define kHeaderFooterSize   CGSizeMake(50.f, 50.f)
+#define kSectionInset       UIEdgeInsetsMake(10, 10, 10, 10)
+#define kContentInset       UIEdgeInsetsMake(30, 30, 30, 30)
 
 @interface JQViewController ()<UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 
@@ -28,6 +30,7 @@ static CGFloat const kPadding = 5.f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.collectionView.contentInset = kContentInset;
     [self.collectionView registerNib:[UINib nibWithNibName:@"JQCollectionViewImageCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"header"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"footer"];
@@ -84,7 +87,7 @@ static CGFloat const kPadding = 5.f;
 #pragma mark - JQCollectionViewDelegateWaterfallLayout
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(kPadding, kPadding, kPadding, kPadding);
+    return kSectionInset;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -92,13 +95,22 @@ static CGFloat const kPadding = 5.f;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // insetForSectionAtIndex
     UIEdgeInsets insets = [self collectionView:collectionView layout:collectionViewLayout insetForSectionAtIndex:indexPath.section];
+    
+    // minimumInteritemSpacingForSectionAtIndex
     CGFloat minimumInteritemSpacing = [self collectionView:collectionView layout:collectionViewLayout minimumInteritemSpacingForSectionAtIndex:indexPath.section];
+    
+    // display image
     UIImage *image = self.data[indexPath.section][indexPath.item];
+    
     if (self.direction == UICollectionViewScrollDirectionVertical) {
+        // When scroll direction is UICollectionViewScrollDirectionVertical, the item width is fixed, the item height is flexible. And you can change the col count by measure the item width.
         CGFloat width =(CGRectGetWidth(collectionView.frame) - insets.left - insets.right - collectionView.contentInset.left - collectionView.contentInset.right + minimumInteritemSpacing) / (CGFloat)(2 + indexPath.section) - minimumInteritemSpacing;
         return CGSizeMake(width, image.size.height / image.size.width * width);
     } else {
+        // When scroll direction is UICollectionViewScrollDirectionHorizontal, the item height is fixed, the item width is flexible. And you can change the row count by measure the item height.
         CGFloat height =(CGRectGetHeight(collectionView.frame) - insets.top - insets.bottom - collectionView.contentInset.top - collectionView.contentInset.bottom + minimumInteritemSpacing) / (CGFloat)(self.data.count + 1 - indexPath.section) - minimumInteritemSpacing;
         return CGSizeMake(image.size.width / image.size.height * height, height);
     }

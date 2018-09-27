@@ -1,5 +1,5 @@
 PODS:
-  - JQCollectionViewWaterfallLayout (0.1.0)
+  - JQCollectionViewWaterfallLayout (0.1.2)
 
 DEPENDENCIES:
   - JQCollectionViewWaterfallLayout (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JQCollectionViewWaterfallLayout: ef865b748c191c5973737251b3ce77fa3e6aac96
+  JQCollectionViewWaterfallLayout: b311b366b4b72cd854272e9ec707a4adb62198cd
 
 PODFILE CHECKSUM: 5abcbe59807c651b86b40ec542e143e897136c52
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.1
