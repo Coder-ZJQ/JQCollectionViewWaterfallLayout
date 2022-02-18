@@ -1,6 +1,6 @@
 {
   "name": "JQCollectionViewWaterfallLayout",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "summary": "UICollectionView waterfall layout.",
   "description": "UICollectionView waterfall layout:\n1. support vertical and horizontal scroll direction;\n2. support different row/col count with different section;\n3. support section headerView and footerView;\n4. support UICollectionView updates.",
   "homepage": "https://github.com/coder-zjq/JQCollectionViewWaterfallLayout",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/coder-zjq/JQCollectionViewWaterfallLayout.git",
-    "tag": "0.1.2"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "6.0"

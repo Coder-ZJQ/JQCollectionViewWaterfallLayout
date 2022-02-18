@@ -10,6 +10,19 @@
 
 UIKIT_EXTERN NSString * _Nonnull const JQCollectionElementKindCell NS_AVAILABLE_IOS(6_0);
 
+
+@protocol JQCollectionViewWaterfallLayoutDelegate <UICollectionViewDelegateFlowLayout>
+
+/// number of colums in section
+/// @param collectionView UICollectionView
+/// @param section UICollectionView section
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfColumnsInSection:(NSInteger)section;
+
+@end
+
 @interface JQCollectionViewWaterfallLayout : UICollectionViewFlowLayout
+
+/// number of columns for all sections(default: 2)
+@property (nonatomic) NSInteger numberOfColumns;
 
 @end

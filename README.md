@@ -39,20 +39,19 @@ pod 'JQCollectionViewWaterfallLayout'
 
 ## Usage
 
-Same usage as UICollectionViewFlowLayout. But you should pay attention to the  **UICollectionViewDelegateFlowLayout** protocol method `collectionView:layout:sizeForItemAtIndexPath: `.
-
+- property
 ``` objective-c
+layout.numberOfColumns = 3;
+```
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    // When scroll direction is UICollectionViewScrollDirectionVertical, the item width is fixed, the item height is flexible. And you can change the col count by measure the item width.
-    
-    // When scroll direction is UICollectionViewScrollDirectionHorizontal, the item height is fixed, the item width is flexible. And you can change the row count by measure the item height.
-
+- or delegate
+``` objective-c
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfColumnsInSection:(NSInteger)section {
+    return [self.data[section][@"column"] integerValue];
 }
 ```
 
-(see more detail in [**Example Project**](https://github.com/Coder-ZJQ/JQCollectionViewWaterfallLayout/blob/7152814d902b63099e878fbb5d92d986ca8496fa/Example/JQCollectionViewWaterfallLayout/JQViewController.m#L97))
+(see more detail in [**Example Project**](https://github.com/Coder-ZJQ/JQCollectionViewWaterfallLayout/blob/master/Example/JQCollectionViewWaterfallLayout/JQViewController.m#L115-L122))
 
 ## Author
 
